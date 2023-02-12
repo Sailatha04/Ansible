@@ -1,0 +1,16 @@
+---
+- hosts: test
+  user: ansible
+  become: yes
+  connection: ssh
+
+
+  vars:
+    - xyz: tree
+
+  tasks:
+    - name: installing git in test servers
+      action: yum name='{{abc}}' state=present
+
+    - name: installing tree in test servers
+      action: yum name='{{xyz}}' state=present
