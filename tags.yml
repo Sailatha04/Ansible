@@ -1,0 +1,17 @@
+- hosts: dev
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: installing git in dev server.
+      action: yum name=git state=present
+      tags: abc
+
+    - name: intalling tree in dev server
+      action: yum name=tree state=present
+      tags: def
+
+    - name: installing maven in dev server
+      command: yum install maven -y
+      tags: xyz
