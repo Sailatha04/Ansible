@@ -1,0 +1,14 @@
+---
+- hosts: test
+  user: ansible
+  become:  yes
+  connection: ssh
+
+  tasks:
+    - name: installing httpd server
+      command: yum install httpd -y
+      notify: restart httpd
+
+  handlers:
+    - name: restart httpd
+      service: name= httpd state=restarted
