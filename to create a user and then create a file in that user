@@ -1,0 +1,14 @@
+---
+- hosts: test
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: creating a user
+      user: name=devops state=present
+
+    - name: creating a file in devops user
+      file:
+       path: "/home/devops/devops.txt"
+       state: touch
