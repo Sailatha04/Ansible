@@ -1,0 +1,17 @@
+---
+- hosts: dev
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - include: var.yml
+    - name: installing git in dev servers.
+      action: yum name=git state=present
+      
+************************************************************************************************************************************
+     var.yml 
+      ---
+  - set_fact: abc=maven
+  - name: installing maven in dev servers
+    action: yum name='{{abc}}' state=present
