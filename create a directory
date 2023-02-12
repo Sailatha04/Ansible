@@ -1,0 +1,11 @@
+---
+- hosts: dev
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: creating a directory
+      file:
+        path: "folder1"
+        state: directory
