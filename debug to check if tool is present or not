@@ -1,0 +1,19 @@
+---
+- hosts: test
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: check for git
+      shell: rpm -qa | grep git
+      register: output
+      ignore_errors: yes
+
+    - name: if git present
+      debug: msg=" git is installed in server"
+      when: " 'git' in output.stdout"
+
+    - name: if git is not present
+      debug: msg=" git is not installed in server"
+      when: not 'git' in output.stdout
