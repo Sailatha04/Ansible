@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: inserting the data into file
+      copy:
+        dest: "devops1.txt"
+        content: |
+          inserting data into the devops1.txt file
+          <h1> this is data </h1>
