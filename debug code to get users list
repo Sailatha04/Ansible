@@ -1,0 +1,13 @@
+---
+- hosts: test
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+     - name: get the users list
+       command: cat /etc/passwd
+       register: abc
+
+     - debug:
+         msg: "this is the users list in test server {{abc.stdout}}"
