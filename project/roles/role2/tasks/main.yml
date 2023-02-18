@@ -1,0 +1,3 @@
+---
+- name: installing maven
+  command: yum install maven -y

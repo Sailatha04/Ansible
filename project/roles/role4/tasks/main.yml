@@ -1,0 +1,4 @@
+---
+- name: installing tree
+  command: yum install tree -y
+

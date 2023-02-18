@@ -1,0 +1,12 @@
+---
+- hosts: test
+  become: yes
+  user: ansible
+  connection: ssh
+
+  roles:
+    - role4
+    - role2
+    - role1
+    - role3
+
