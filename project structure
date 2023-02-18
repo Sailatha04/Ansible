@@ -1,0 +1,14 @@
+├── main.yml
+└── roles
+    ├── role1
+    │   └── tasks
+    │       └── main.yml
+    ├── role2
+    │   └── tasks
+    │       └── main.yml
+    ├── role3
+    │   └── tasks
+    │       └── main.yml
+    └── role4
+        └── tasks
+            └── main.yml
