@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  user: ansible
+  become: yes
+  connection: ssh
+
+  tasks:
+    - name: changing permissions of a file
+      file:
+        path: "devops2.txt"
+        state: touch
+        mode: 777
+                       
